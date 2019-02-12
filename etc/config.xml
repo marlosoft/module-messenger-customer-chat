@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+  <default>
+    <marlosoft>
+      <messenger_customer_chat>
+        <enabled>0</enabled>
+        <theme_color>#0084ff</theme_color>
+        <logged_in_greeting>Hi! How can we help you?</logged_in_greeting>
+        <greeting_dialog_display>show</greeting_dialog_display>
+      </messenger_customer_chat>
+    </marlosoft>
+  </default>
+</config>

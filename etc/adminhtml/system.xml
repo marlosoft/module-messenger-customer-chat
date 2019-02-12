@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+  <system>
+    <tab id="marlosoft_tab" translate="label" sortOrder="280">
+      <label>Marlosoft</label>
+    </tab>
+    <section id="marlosoft" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+      <class>separator-top</class>
+      <label>Messenger Customer Chat</label>
+      <tab>marlosoft_tab</tab>
+      <resource>Marlosoft_MessengerCustomerChat::config</resource>
+      <group id="messenger_customer_chat" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Chat Plugin Options</label>
+        <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Enable Plugin</label>
+          <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="page_id" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Facebook Page ID</label>
+          <comment>Sets the number of seconds of delay before the greeting dialog is shown after the plugin is loaded. This can be used to customize when you want the greeting dialog to appear.</comment>
+          <validate>validate-digits</validate>
+        </field>
+        <field id="theme_color" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Theme Color</label>
+          <frontend_model>Marlosoft\MessengerCustomerChat\Block\Color</frontend_model>
+          <comment>The color to use as a theme for the plugin, including the background color of the customer chat plugin icon and the background color of any messages sent by users.</comment>
+        </field>
+        <field id="logged_in_greeting" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Logged-In Greeting</label>
+          <comment>The greeting text that will be displayed if the user is currently logged in to Facebook. Maximum 80 characters.</comment>
+          <validate>validate-length maximum-length-80</validate>
+        </field>
+        <field id="logged_out_greeting" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Logged-Out Greeting</label>
+          <comment>The greeting text that will be displayed if the user is currently not logged in to Facebook. Maximum 80 characters.</comment>
+          <validate>validate-length maximum-length-80 validate-data</validate>
+        </field>
+        <field id="greeting_dialog_display" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Greeting Dialog Display</label>
+          <comment>Sets how the greeting dialog will be displayed.</comment>
+          <source_model>Marlosoft\MessengerCustomerChat\Model\Config\Source\Display</source_model>
+        </field>
+        <field id="greeting_dialog_delay" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>Greeting Dialog Delay</label>
+          <comment>Sets the number of seconds of delay before the greeting dialog is shown after the plugin is loaded. This can be used to customize when you want the greeting dialog to appear.</comment>
+          <validate>validate-digits</validate>
+        </field>
+      </group>
+    </section>
+  </system>
+</config>
