@@ -4,24 +4,19 @@
 $helper = $block->getHelper();
 
 ?>
-<script type="text/x-magento-init">
-  require(['jquery'], function($) {
-    $(function () {
-      window.fbAsyncInit = function () {
-        FB.init({xfbml: true, version: 'v3.2'});
-      };
-
-      (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = '<?php /* @escapeNotVerified */ echo($helper->getJsSdkUrl()); ?>';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    })
-  });
-</script>
-
 <div id="fb-root"></div>
 <div class="fb-customerchat" <?php /* @escapeNotVerified */ echo($helper->getAttributes()); ?>></div>
+<script async type="text/javascript">
+  window.fbAsyncInit = function () {
+    FB.init({xfbml: true, version: 'v3.2'});
+  };
+
+  (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = '<?php /* @escapeNotVerified */ echo($helper->getJsSdkUrl()); ?>';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
